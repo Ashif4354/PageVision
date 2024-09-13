@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "PageVision",
+    "version": "0.1.0",
+    "description": "A smart web extension that effortlessly scans and extracts key information from any webpage. With a simple click, it helps you query, analyze, and retrieve data, making web navigation more insightful and efficient!",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "assets/icons/icon16.png",
+            "48": "assets/icons/icon48.png",
+            "128": "assets/icons/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
