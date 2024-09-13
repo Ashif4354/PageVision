@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "PageVision",
     "version": "0.1.0",
-    "description": "A smart web extension that effortlessly scans and extracts key information from any webpage. With a simple click, it helps you query, analyze, and retrieve data, making web navigation more insightful and efficient!",
+    "description": "A web extension which can be used to query the DOM of a webpage.",
     "permissions": [
         "activeTab",
         "scripting"
