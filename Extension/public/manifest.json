@@ -4,8 +4,6 @@
     "version": "0.1.0",
     "description": "A web extension which can be used to query the DOM of a webpage.",
     "permissions": [
-        "activeTab",
-        "scripting"
     ],
     "action": {
         "default_popup": "index.html",

@@ -25,4 +25,7 @@ dist-ssr
 
 content.txt
 output.html
+output.txt
+response.json
 *venv*
+test
