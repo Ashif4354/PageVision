@@ -1,6 +1,8 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === 'getHTML') {
-        sendResponse({ html: document.documentElement.outerHTML });
+    console.log("Message received in content script:", message);
+    if (message.action === 'getTextContent') {
+        console.log("HTML sent to background script");
+        sendResponse({ text: document.body.innerText });
     }
 })
 
