@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>PageVision - Your AI Companion for Any Webpage</title>
+    <meta name="description"
+        content="PageVision is an intelligent browser extension that lets you run AI-powered queries on any webpage's content using Google Gemini, Gemma, or local Ollama models.">
+    <meta name="keywords"
+        content="PageVision, AI, browser extension, Google Gemini, Ollama, webpage analysis, text summarization, AI queries, productivity tool, Ashif, DarkGlance">
+    <meta name="author" content="DarkGlance (Ashif)">
+    <link rel="canonical" href="https://pagevision.darkglance.in">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pagevision.darkglance.in">
+    <meta property="og:title" content="PageVision - Your AI Companion for Any Webpage">
+    <meta property="og:description"
+        content="Use AI to understand, summarize, and analyze any webpage content directly in your browser. Supports Google Gemini and local Ollama models.">
+    <meta property="og:image" content="https://placehold.co/1200x630/1a1b26/ffffff?text=PageVision">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pagevision.darkglance.in">
+    <meta property="twitter:title" content="PageVision - Your AI Companion for Any Webpage">
+    <meta property="twitter:description"
+        content="Use AI to understand, summarize, and analyze any webpage content directly in your browser. Supports Google Gemini and local Ollama models.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/1a1b26/ffffff?text=PageVision">
+
+    <!-- Favicon -->
+    <link rel="icon" href="icon48.png" type="image/png">
+
+    <!-- Tailwind CSS & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "PageVision",
+            "operatingSystem": "Chrome OS, Windows, macOS, Linux",
+            "applicationCategory": "BrowserApplication",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "description": "PageVision is an intelligent browser extension that lets you run AI-powered queries on any webpage's content using Google Gemini, Gemma, or local Ollama models.",
+            "url": "https://chromewebstore.google.com/detail/pagevision/gpkelljfcgfjhddfilfmlebckenccbin",
+            "author": {
+                "@type": "Person",
+                "name": "Ashif",
+                "url": "https://github.com/Ashif4354"
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles for a modern look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            /* Dark blue-gray */
+            color: #d1d5db;
+            /* Light gray text */
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+        }
+
+        .feature-card {
+            background-color: #1f2937;
+            /* Slightly lighter dark */
+            border: 1px solid #374151;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #4f46e5;
+        }
+
+        .section-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(79, 70, 229, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">🧠 Page<span class="gradient-text">Vision</span></a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
+                <a href="#privacy" class="text-gray-300 hover:text-white transition">Privacy</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a>
+            </nav>
+            <a href="https://github.com/Ashif4354/PageVision" target="_blank" rel="noopener noreferrer"
+                class="hidden md:block text-gray-300 hover:text-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            <div class="md:hidden">
+                <!-- Mobile menu can be added here if needed -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 text-center overflow-hidden">
+            <div class="section-glow top-0 left-1/2 -translate-x-1/2"></div>
+            <div class="container mx-auto px-6 relative">
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight">
+                    Your Intelligent Companion for <br class="hidden md:block"> <span
+                        class="gradient-text">Understanding Any Webpage</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-400">
+                    PageVision extracts text from the current page and lets you run AI-powered queries with custom
+                    prompts — giving you quick, relevant insights, right inside your browser.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://chromewebstore.google.com/detail/pagevision/gpkelljfcgfjhddfilfmlebckenccbin"
+                        target="_blank" rel="noopener noreferrer"
+                        class="cta-button w-full sm:w-auto inline-block bg-indigo-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-indigo-700">
+                        Add to Chrome
+                    </a>
+                    <a href="https://github.com/Ashif4354/PageVision" target="_blank" rel="noopener noreferrer"
+                        class="w-full sm:w-auto inline-block bg-gray-700 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-gray-600 transition">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">✨ Features</h2>
+                    <p class="mt-4 text-lg text-gray-400">Everything you need to turn webpages into knowledge.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card p-8 rounded-lg">
+                        <div class="text-3xl mb-4">🧾</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Ask Anything About the Page</h3>
+                        <p class="text-gray-400">Use your own prompts to query the text content of any webpage using AI.
+                        </p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card p-8 rounded-lg">
+                        <div class="text-3xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Choose Your AI Engine</h3>
+                        <p class="text-gray-400">Supports Google Gemini/Gemma (via API key) and Ollama for local AI
+                            processing.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-card p-8 rounded-lg">
+                        <div class="text-3xl mb-4">🤖</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Auto Model Detection</h3>
+                        <p class="text-gray-400">Instantly detects installed models on your local machine when using
+                            Ollama.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="feature-card p-8 rounded-lg">
+                        <div class="text-3xl mb-4">💡</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Dark Themed AI Responses</h3>
+                        <p class="text-gray-400">PageVision styles AI responses to suit dark mode environments for a
+                            clean UI and cool UX.</p>
+                    </div>
+                    <!-- Feature 5 -->
+                    <div class="feature-card p-8 rounded-lg">
+                        <div class="text-3xl mb-4">🔁</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Easy Model Switching</h3>
+                        <p class="text-gray-400">Change your AI model settings at any time using the simple settings
+                            popup.</p>
+                    </div>
+                    <!-- Warning Card -->
+                    <div class="feature-card p-8 rounded-lg bg-yellow-900/20 border-yellow-500/50">
+                        <div class="text-3xl mb-4">⚠️</div>
+                        <h3 class="text-xl font-bold text-yellow-300 mb-2">Content Restrictions</h3>
+                        <p class="text-yellow-400">Some websites (like the Chrome Web Store) may block extensions from
+                            accessing their content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Section -->
+        <section id="privacy" class="relative py-20 bg-gray-900 overflow-hidden">
+            <div class="section-glow bottom-0 right-0"></div>
+            <div class="container mx-auto px-6 relative">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">🔒 Your Privacy is Respected</h2>
+                    <p class="mt-4 text-lg text-gray-400">No gimmicks, no shady tracking. Ever.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-gray-800 p-8 rounded-lg border border-gray-700">
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-red-500 font-bold mr-3">❌</span>
+                            <span><span class="font-semibold text-white">No Tracking:</span> We don't monitor your
+                                activity.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 font-bold mr-3">❌</span>
+                            <span><span class="font-semibold text-white">No Data Collection:</span> Your browsing data
+                                is yours alone.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 font-bold mr-3">✅</span>
+                            <span><span class="font-semibold text-white">You Choose the AI:</span> Prompts and page
+                                content are only sent to the AI provider you configure (Google or local Ollama).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 font-bold mr-3">✅</span>
+                            <span><span class="font-semibold text-white">Local Storage:</span> All settings are stored
+                                securely in your browser, not on our servers.</span>
+                        </li>
+                    </ul>
+                    <p class="mt-6 text-center text-gray-400 italic">
+                        PageVision does not send any data to external servers unless it's via your configured AI
+                        provider.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Contribute Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">📬 Get in Touch & Contribute</h2>
+                <p class="mt-4 text-lg text-gray-400">Have questions, bugs, or feature ideas? Pull Requests are welcome!
+                </p>
+                <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-8 text-lg">
+                    <a href="mailto:darkglance.dev@gmail.com"
+                        class="text-indigo-400 hover:text-indigo-300 transition">📧 Email: darkglance.dev@gmail.com</a>
+                    <a href="https://github.com/Ashif4354/PageVision" target="_blank" rel="noopener noreferrer"
+                        class="text-indigo-400 hover:text-indigo-300 transition">🐙 GitHub: github.com/Ashif4354</a>
+                </div>
+                <p class="mt-8 text-gray-500">Vera level idea irundha, sollu da! 🤙</p>
+                <p class="mt-8 text-gray-400">
+                    This project is open to enhancements and fixes. Fork it, tweak it, and PR like a boss.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <p>Made with ❤️ in Tamilnadu, running strong on <strong>React</strong> and caffeine ☕</p>
+            <p class="mt-2 text-2xl"><strong>#OnePieceForever</strong> 🏴‍☠️</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
