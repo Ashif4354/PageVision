@@ -1,12 +1,10 @@
 import { useState } from 'react'
+import SendIcon from '@mui/icons-material/Send';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 import './App.css'
 import { submitToServer } from './scripts/submit'
 import Settings from './Settings'
-
-import SendIcon from '@mui/icons-material/Send';
-import SettingsIcon from '@mui/icons-material/Settings';
-import Skeleton from '@mui/material/Skeleton';
 import Loading from './Components/Loading'
 
 
@@ -21,7 +19,6 @@ function App() {
         setOutput('')
         submitToServer(prompt, setOutput)
     }
-
 
     return (
         <div className='main-container'>
@@ -51,10 +48,8 @@ function App() {
                         placeholder='Enter your prompt'
                         value={prompt}
                         onChange={(e) => setPrompt(e.target.value)}
-                    // rows={7}
 
                     />
-                    {/* <button className='submit-button' onClick={onSubmit}><img className='right-arrow' src={rightArrow} alt='enter-btn' /></button> */}
                     <button className='submit-button' onClick={onSubmit}>
                         <SendIcon
                             fontSize='medium'
@@ -64,7 +59,6 @@ function App() {
                 <div className='output-container'>
                     {submitted ? (
                         output === '' ? (
-                            // <p className='output-loading-text'>Output loading...</p>
                             <Loading />
                         ) : (
                             <div dangerouslySetInnerHTML={{ __html: output }} className='output-text' />

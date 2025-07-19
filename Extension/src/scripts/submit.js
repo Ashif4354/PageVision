@@ -3,7 +3,7 @@ import generatePrompt from "./generatePrompt";
 const submitToServer = (prompt, setOutput) => {
 
     const settings = JSON.parse(localStorage.getItem('PageVisionSettings'));
-    console.log("Settings:", settings);
+    // console.log("Settings:", settings);
     
     //get html of current page
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {

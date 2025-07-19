@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+// Only this component of the extension is AI generated.
+// This file contains the settings dialog for configuring the model source and other settings.
+import { useState, useEffect } from 'react';
 import {
     Dialog,
     DialogTitle,
